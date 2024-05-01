@@ -19,14 +19,15 @@ Image compression, a subset of data compression, is crucial for optimizing data 
 ### MNIST Dataset
 We used the MNIST handwritten digits dataset
 
-![mnist_ex]()
+![MNIST example](https://github.com/yanisgomes/LearnedDataCompression/assets/115785457/7327d9e7-59e1-452c-af5e-dca9a8d9fc37)
+
 
 # Model definition
 
 ## Before training
 As we can see below, before training the randomly initialized weights are returning a noisy output insofaras the encoder/decoder has not been trained yet.
 
-![reconstruction]()      
+![Reconstruction before training](https://github.com/yanisgomes/LearnedDataCompression/assets/115785457/7b16cfc9-19af-4830-a0b1-6db2b34957b7)
 
 ## Latent space dimensons
 We chose a 50-dimensional latent space to represent the images which probability distribution follows Gaussian distributions.
@@ -49,23 +50,22 @@ The encoder performs the analysis transformation, converting images into vectors
 ## Noise Addition to improve robustness
 Incorporates noise into the data representation to enable robust quantization and to minimize quantization errors. This kind of quantization is called **dithered quantization**. The probability distribution followed by latent representations are represented in the following figure :
 
- ![Noise Distribution]()
+![Noise distribution](https://github.com/yanisgomes/LearnedDataCompression/assets/115785457/4365237d-bbe7-4cdb-b3fa-8683c6431187)
 
 ## Results after training
 The model was trained on 15 epochs to get the following results :
 
-![Results out of the decoder on the MNIST dataset]()
+![Results out of the decoder on the MNIST dataset](https://github.com/yanisgomes/LearnedDataCompression/assets/115785457/1ebb611d-3021-44c1-b854-bdcab2a89685)
 
 ## Rate-Distortion trade-off
 In the loss function, 'lmbda' is the parameter which tells the model how much distorsion needs to be prioretized over bits rate.
 
-![PSNR / rate graph]()
-
+![PSNR / rate graph](https://github.com/yanisgomes/LearnedDataCompression/assets/115785457/b3bf2e15-4726-4f93-8d8b-e22d8b148ee6)
 
 # Generative Model Capability
 Once the decoder has been trained, from a random latent vector we can generate an artificial handwritten digits with the decoder : it is a classic architecture for generative AI. We now have a model capable to generate handwritten digits
 
-![Generated Handwritten Digits]()
+![Generated Handwritten Digits](https://github.com/yanisgomes/LearnedDataCompression/assets/115785457/e1919711-1f27-4d89-be50-3ea1fafce2a0)
 
 # Outlook
 Explores the application of variational encoders for generating handwritten digits, focusing on the initialization of the model and the role of the prior distribution in regularizing and shaping the model's complexity.
